@@ -1,0 +1,50 @@
+{
+  "name": "skylark-minibed",
+  "description": "A version of minibed.js( html/css/js playground) that ported to running on skylarkjs.",
+  "version": "0.9.0",
+  "keywords": [
+    "minibed",
+    "playground"
+  ],
+  "homepage": "https://github.com/skylark-integration/skylark-minibed/",
+  "author": "Hudaokeji, Inc.",
+  "scripts": {
+    "build": "slib build ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skylark-integration/skylark-minibed.git"
+  },
+  "bugs": {
+    "url": "https://github.com/skylark-integration/skylark-minibed/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "skylark-codemirror": "git+https://github.com/skylark-integration/skylark-codemirror.git#master",
+    "skylark-langx": "git+https://github.com/skylark-langx/skylark-langx.git#master"
+  },
+  "skylarkjs": {
+    "directories": {
+      "dependencies": "./node_modules"
+    },
+    "secondaries": {},
+    "build": {
+      "prepare": {
+        "texttojs": [
+          "html",
+          "json",
+          "css"
+        ],
+        "jsxtojs": false,
+        "es6toamd": false,
+        "cjstoamd": false
+      },
+      "bundles": {
+        "all": true
+      }
+    }
+  },
+  "engines": {
+    "node": ">=0.10.1"
+  }
+}
